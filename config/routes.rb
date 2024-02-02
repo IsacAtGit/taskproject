@@ -8,12 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "task#index"
-  post "todos/create", to:"task#createtask"
-  get "todos", to:"task#viewalltasks"
-  get "todos/notcompleted", to:"task#notcompleted"
-  get "todos/completed", to:"task#completed"
-  put "todos/:id/edit", to:"task#edittask"
-  get "todos/:id", to:"task#specifictask"
-  delete "todos/:id/delete" ,to:"task#deletetask"
+  post "/todoscreate", to:"task#createtask"
+  get "/todos/handle_selection", to:"task#handle_selection"
+  get "/todos/completed", to:"task#completed"
+  put "/todos/editstatus", to:"task#editstatus"
+
+  delete "/todos/delete" ,to:"task#deletetask"
  
 end
